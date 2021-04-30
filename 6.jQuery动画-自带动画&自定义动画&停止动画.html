@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    jQuery动画:
+      动画有关函数的三个参数说明:
+            参数一: 控制动画持续时间, 不需要带单位 (默认会加上单位ms)
+            参数二: 控制动画节奏 (两个值: swing秋千 / linear线性)
+            参数三: 动画执行结束后, 执行此回调函数
+
+      jQuery自带动画(三组):
+        1.show(speed,easing,callback)  展示 
+          hide(speed,easing,callback)  隐藏
+          toggle(speed,easing,callback)(展示则隐藏, 隐藏则展示)
+          主要控制三个css属性:
+            a.width
+            b.height
+            c.opacity (0-1)
+          特别注意:
+            如果这三个方法不传入参数时, 是没有动画效果的
+          
+        2.fadeIn(speed,easing,callback)     淡入
+          fadeOut(speed,easing,callback)    淡出
+          fadeToggle(speed,easing,callback) (展示则淡出,隐藏则淡入)
+          主要控制一个css属性:
+            a.opacity
+          特别注意:
+            即使不传入参数, 也有动画效果(默认)
+
+        3.slideDown(speed,easing,callback)  滑入
+          slideUp(speed,easing,callback)    滑出
+          slideToggle(speed,easing,callback) (展示则滑出,隐藏则滑入)
+          主要控制一个css属性:
+            a.height
+          特别注意:
+            即使不传入参数, 也有动画效果 (默认)
+
+      jQuery自定义动画(animate)
+        j.animate({css属性:值,css属性:值},speed,easing,callback)
+        可控制的css属性:
+          要求属性值是数字类型的css样式, 非数字类型值的css属性,没有动画效果, 例如颜色: 是字符串类型值
+
+      jQuery动画停止(stop)
+        本质上: 表示停止当前执行的动画, 立即执行动画队列中的下一个动画
+        j.stop(是否清空动画队列, 是否跳到本次动画最终效果)
+          参数一:
+            a. true: 表示清空动画队列
+            b. false: (不填时, 默认false), 不清空动画队列
+          参数二:
+            a. true: 表示跳到本次动画的最终效果
+            b. false: 表示停止本次动画, 直接进入下一次动画
+        实际使用:
+          在设置动画前, 先stop(true)即可
+          例如: $('#box').stop(true).animate({width:100},1000)
+                $('#box').stop(true).show(1000)
+
+   -->  
+</body>
+</html>

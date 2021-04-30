@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      width: 1300px;
+    }
+
+    div {
+      width: 1200px;
+      height: 400px;
+      border: 2px solid red;
+      margin: 100px auto;
+      overflow: hidden;
+    }
+
+    div li {
+      width: 240px;
+      height: 400px;
+      float: left;
+    }
+
+    div li.accordion1 {
+      background-image: url(images/1.jpg);
+    }
+
+    div li.accordion2 {
+      background-image: url(images/2.jpg);
+    }
+
+    div li.accordion3 {
+      background-image: url(images/3.jpg);
+    }
+
+    div li.accordion4 {
+      background-image: url(images/4.jpg);
+    }
+
+    div li.accordion5 {
+      background-image: url(images/5.jpg);
+    }
+  </style>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      // 需求1:当鼠标移入li时, 当前的li的宽度缓慢变为800px, 其他li的宽度缓慢变为100px
+
+      // 1.获取元素
+      var oLis = document.querySelectorAll('#box>ul>li');
+      var oBox = document.getElementById('box');
+
+      // 声明定时器(一般在全局声明)
+      var timer = null;
+
+      // 2.遍历所有li, 让每个li都调用一次回调函数
+      oLis.forEach(function (item) {
+        // (1) 给当前li绑定鼠标移入事件
+        item.onmouseenter = function () {
+          // >> 事件处理函数操作一: 让当前li的宽度缓慢变为800px
+          // a.获取鼠标移入li的宽度
+          var startW = item.offsetWidth;
+          // b.设置li的最终宽度
+          var endW = 800
+          // c.设置初始步数为0
+          var startStep = 0
+          // d.设置总计步数为30
+          var endStep = 30
+          // e.每步变化的长度
+          var everyStep = (endW - startW) / endStep
+
+          // >> 事件处理函数操作二: 让其他li宽度缓慢变为100px
+          var elseStartW = item.offsetWidth;
+          var elseEndW = 100
+          var elseEveryStep = (elseEndW - elseStartW) / endStep
+
+          var _this = this; //将当前事件触发li元素用变量_this保存,用于传入内层函数
+          // 遍历所有li
+          oLis.forEach(function (item) {
+            // f.设置定时器前清理定时器
+            clearInterval(timer);
+            // g.设置定时器1
+            timer = setInterval(function () {
+              // (a)让当前li宽度自动递增
+              startW += everyStep;
+              elseStartW += elseEveryStep;
+              // (b)步数自加一
+              startStep++;
+              // (c)临界值判断
+              if (startStep >= endStep) {
+                clearInterval(timer);
+              }
+              // (d)设置当前li的width
+              if (item === _this) {
+                _this.style.width = startW + "px";
+                console.log(startW);
+              }
+              item.style.width = elseStartW + "px";
+            }, 1)
+          })
+        }
+      })
+
+      // 需求2:当鼠标移出box时, 所有的li的宽度缓慢变为240px
+
+
+    })
+  </script>
+</head>
+
+<body>
+  <div id="box">
+    <ul>
+      <li class="accordion1"></li>
+      <li class="accordion2"></li>
+      <li class="accordion3"></li>
+      <li class="accordion4"></li>
+      <li class="accordion5"></li>
+    </ul>
+  </div>
+</body>
+
+</html>

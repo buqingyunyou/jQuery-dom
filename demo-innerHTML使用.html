@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="outer">
+    <ul id="list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <div id="box">
+      <div id="con">div元素</div>
+      <span id="des">行内元素</span>
+    </div>
+  </div>
+
+  <a href=""></a>
+  <script>
+    // 1.使用innerHTML获取元素的内容 (子元素的html结构字符串)
+    var oUl = document.querySelector('#outer>ul');
+    var oU = document.getElementById('list');
+    var htmlStr = oU.innerHTML
+    console.log(htmlStr); //<li>1</li><li>2</li><li>3</li><li>4</li>
+
+    // 2.设置innerHTML属性,创建元素
+    var oCon = document.getElementById('con');
+    oCon.innerHTML = '<div>通过innerHTML创建的元素, 会覆盖原有内容</div>';
+
+  </script>
+</body>
+
+</html>

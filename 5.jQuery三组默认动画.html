@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box {
+      /* 快速编码: w200px + 回车 */
+      width: 200px;
+      /* 快速编码: h200px + 回车 */
+      height: 200px;
+      background-color: red;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 快速编码: btn#btn  -->
+  <button id="btn1">show</button>
+  <button id="btn2">hide</button>
+  <button id="btn3">slideDown</button>
+  <button id="btn4">slideUp</button>
+  <button id="btn5">fadeIn</button>
+  <button id="btn6">fadeOut</button>
+
+  <!-- 快速编码: div#box -->
+  <div id="box"></div>
+
+  <script src="./jquery-1.12.4.min.js"></script>
+
+  <script>
+    $('#btn1').click(function () {
+      $('#box').show(2000);
+    })
+    $('#btn2').click(function () {
+      $('#box').hide(2000);
+    })
+    $('#btn3').click(function () {
+      $('#box').slideDown(2000);
+    })
+    $('#btn4').click(function () {
+      $('#box').slideUp(2000);
+    })
+    $('#btn5').click(function () {
+      $('#box').fadeIn(2000);
+    })
+    $('#btn6').click(function () {
+      $('#box').fadeOut(2000);
+    })
+  </script>
+</body>
+
+</html>

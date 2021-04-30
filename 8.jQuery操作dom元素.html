@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    jQuery的DOM操作
+      (1) 操作DOM元素
+        a. 添加(插入)    
+          (1) append()方法  --插入到父元素内部末尾--
+            j.append($('div'))            传入jQuery对象
+            j.append(oIpt)                传入Dom对象
+            j.append("<span>你好</span>") 传入html结构的字符串 (解析html标签)
+            特别注意:
+              如果传入的元素是已经存在的元素, 则是剪切过去
+            对比原生JS:
+              ele.appendChild(子元素)
+
+          (2) html()方法  --覆盖父元素所有内容--
+            j.html("<div>内容</div>")     只能传入html结构的字符串
+              如果传入的元素中存在其他元素, 则会直接被覆盖掉
+            对比原生JS:
+              ele.innerHTML('<div>内容</div>')
+
+          (3) prepend()方法 --插入到父元素内部开头--
+            j.prepend($('div'))
+
+          (4) after()方法  --插入到当前元素后面-- (兄弟元素)
+            j.after($('div'))
+            对比原生JS:
+
+          (5) before()方法 --插入到当前元素前面-- (兄弟元素)
+            j.before($('div'))
+
+        b. 清空
+          (1) empty() 清空目标元素内的所有内容, 同时移除事件 (只能移除jQuery方式注册的事件)
+            j.empty()
+            对比原生JS:
+              ele.removeChild() 移除父元素中的所有子元素
+
+          (2) html('')  清空目标元素的所有内容, 不能移除事件
+            j.html('')  注意: 要传入一个空字符串, 本质就是用空字符串去覆盖原有内容
+            对比原生JS:
+              ele.html('')  清空元素的所有内容
+
+        c.  移除
+          remove()  移除自己
+            j.remove()  
+          对比原生JS:
+            ele.remove() 移除自己
+
+        d. 复制
+          (1) clone()/clone(false) 复制所有内容, 不会复制事件
+            j.clone()
+          (2) clone(true) 复制所有内容, 同时复制注册的事件
+            j.clone(true)
+          对比原生JS:
+            ele.cloneNode(false) 复制标签, 不能复制内容和子元素
+            ele.cloneNode(true)  复制标签, 内容和子元素, 不能复制事件
+
+        e. 替换
+        f. 创建
+          (1) jQuery创建元素
+            $('<div>新元素</div>')
+          (2) js创建元素
+            document.createElement('div')
+
+      (2) 操作内容和属性
+        a.获取/添加内容
+          方式一: 添加html内容
+            j.html()
+            j.html('value')
+          方式二: 添加文本内容
+            j.text()
+            j.text('value')
+        b.获取/设置表单的文本内容
+          j.val()
+          j.val('value')
+        c.获取元素指定属性的属性值
+          prop(key)
+          attr(key)
+        d.设置元素指定属性的属性值
+          prop(key,value)
+          attr(key,value)
+        e.设置元素多个属性的属性值
+          prop({key1:value1,key2:value2...})
+        f.删除指定属性
+          removeattr(key)
+        
+   -->
+</body>
+</html>

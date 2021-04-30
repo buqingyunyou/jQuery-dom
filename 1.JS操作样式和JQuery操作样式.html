@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        JS操作样式:
+            (1) 获取样式
+                a.  style获取行内样式 
+                    dom对象.style.属性名
+                b.  offset/client/scorll获取所有样式 (仅限于:元素的尺寸和位置)
+                    ele.offsetWidth (元素带边框宽度)
+                    ele.offsetHeight (元素带边框高度)
+                    ele.clientWidth (元素不带边框宽度)
+                    ele.clientHeight (元素不带边框高度)
+                    ele.scrollWidth (元素带滚动条宽度)
+                    ele.scorllHeight (元素带滚动条高度)
+                    document.documentElement.clientWidth (视口宽度)
+                    document.documentElement.clientHeight (视口高度)
+                    document.documentElement.offsetWidth (文档宽度)
+                    document.documentElement.offseHeight (文档高度)
+
+                    ele.offsetLeft (元素偏移容纳块水平位置)
+                    ele.offsetTop  (元素偏移容纳块垂直位置)
+                    ele.getBoundingClientRect().left (元素偏移视口左边缘位置)
+                    ele.getBoundingClientRect().top (元素偏移视口上边缘位置)
+
+                    ele.clientLeft (左边框宽度)
+                    ele.clientTop (上边框宽度)
+
+                    ele.offsetParent (元素最近定位父级元素)
+
+                c.  getComputedStyle()获取所有样式 (全局方法 getComputedStyle(), 返回dom对象的样式对象)
+                    getComputedStyle(dom对象).width
+                    getComputedStyle(dom对象).backgroundColor
+                    ...
+
+            (2) 设置样式
+                a.  ele.style.属性名 = "值"   (注意: 带上单位)
+
+            (3) 操作class
+                a. className
+                    ele.className = 'class名'
+                    ele.className = ''
+                b. classList
+                    ele.classList.add('active')
+                    ele.classList.remove('active')
+                    ele.classList.toggle('active')
+
+
+        jQuery操作样式:
+            (1) 操作行内样式
+                a. 设置行内样式
+                    j.css('属性名','值')
+                    j.css({属性名1:'值1',属性名2:'值2'})
+                b. 获取 [所有样式] (不局限于行内样式)
+                    j.css('属性名')
+            (2) 操作class
+                a. 添加class
+                    j.addClass("active")
+                b. 移除class
+                    j.removeClass('active')
+                c. 判断是否有class, 返回布尔值
+                    j.hasClass('active')
+                d. 切换class  (添加class, 移除class)
+                    j.toggleClass('active')
+     -->
+</body>
+</html>

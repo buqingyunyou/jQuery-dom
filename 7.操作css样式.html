@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    jQuery操作css样式主要分为以下:
+      (1) 操作行内css样式
+        1.直接获取行内css样式
+          j.css('属性名')
+        2.直接设置行内css样式
+          a. j.css('属性名','值')  设置单个css属性样式
+          b. j.css(属性名:'值',属性名:'值') 设置多个css属性样式
+      (2) 获取所有css样式
+        1.直接获取所有css样式
+          j.css('属性名')
+      (3) 操作css类
+        1. 添加css类
+          j.addClass('类名')
+        2. 移除css类
+          j.removeClass('类名')
+        3. 判断是否存在css类
+          j.hasClass('类名')
+        4. 切换css类 (没有就添加类, 有就移除类)
+          j.toggleClass('类名')
+
+      (4) 操作元素的尺寸 (涉及内外边距[padding/margin]和边宽尺寸[border])
+        a.获取/设置元素的宽度 (content)
+          j.width()
+          j.width(value)
+        b.获取/设置元素的高度 (content)
+          j.height()
+          j.height(value)
+        c.获取元素的宽度和高度 (content+padding)
+          j.innerWidth()
+          j.innerHeight()
+        d.获取元素的宽度和高度 (content+padding+border)
+          j.outerWidth()
+          j.outerHeight()
+        e.获取元素的宽度和高度 (content+padding+border+margin)
+          j.outerWidth(true)
+          j.outerHeight(true)
+
+      (5) 操作元素/滚动条的偏移位置
+        1.获取元素偏移文档的位置
+          j.offset()
+        2.获取元素偏移容纳块的位置
+          j.postion()
+        3.获取/设置垂直滚动条的值
+          j.scrollTop()
+          j.scrollTop(value)
+        4.获取/设置水平滚动条的位置
+          j.scrollLeft()
+          j.scrollLeft(value)
+   -->
+</body>
+</html>

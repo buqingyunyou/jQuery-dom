@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8" />
+  <title></title>
+  <style>
+    select {
+      width: 200px;
+      background-color: teal;
+      height: 200px;
+      font-size: 20px;
+    }
+
+    .btn-box {
+      width: 30px;
+      display: inline-block;
+      vertical-align: top;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>城市选择：</h1>
+  <select id="src-city" name="src-city" multiple>
+    <option value="1">北京</option>
+    <option value="2">上海</option>
+    <option value="3">深圳</option>
+    <option value="4">广州</option>
+    <option value="5">西虹市</option>
+  </select>
+  <div class="btn-box">
+    <!--实体字符-->
+    <button id="btn-sel-all">&gt;&gt;</button>
+    <button id="btn-sel-none">&lt;&lt;</button>
+    <button id="btn-sel">&gt;</button>
+    <button id="btn-back">&lt;</button>
+  </div>
+  <select id="tar-city" name="tar-city" multiple></select>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      // 需求1: 点击>>btn-sel-all箭头时, 将左侧src-city所有的option, 剪切到右侧tar-city
+      var oSrc = document.getElementById('src-city');
+      var oTar = document.getElementById('tar-city');
+      var oSelAll = document.getElementById('btn-sel-all');
+      var oSelNone = document.getElementById('btn-sel-none');
+      /* 
+        使用querySelect()方式获取元素, 结果是静态的
+      */
+      // var oLOptions = document.querySelectorAll('#src-city option');
+      // var oROptions = document.querySelectorAll('#tar-city option');
+
+
+      oSelAll.onclick = function () {
+        var oLOptions = document.querySelectorAll('#src-city option');
+        oLOptions.forEach(function (item) {
+          oTar.appendChild(item);
+        })
+      }
+      oSelNone.onclick = function () {
+        // 每次点击时, 通过新方法获取最新的元素即可
+        var oROptions = document.querySelectorAll('#tar-city option');
+        oROptions.forEach(function (item) {
+          oSrc.appendChild(item);
+        })
+      }
+
+      // 需求2: 按ctrl选中左侧多个option, 点击>btn-sel箭头时, 将左侧选中的option, 剪切到右侧
+      var oSel = document.getElementById('btn-sel');
+      var oBack = document.getElementById('btn-back');
+      oSel.onclick = function(){
+        // 获取当前左侧选中的元素, 添加到右侧
+        var oLOptions = document.querySelectorAll('#src-city option');
+        oLOptions.forEach(function(item){
+          // 判断是否选中 selected
+          if(item.selected){
+            // 如果选中, 则添加到右侧
+            oTar.appendChild(item);
+          }
+        })
+      }
+      oBack.onclick = function(){
+        // 获取当前右侧选中的元素, 添加到左侧
+        var oROptions = document.querySelectorAll('#tar-city option');
+        oROptions.forEach(function(item){
+          // 判断是否选中
+          if(item.selected){
+            oSrc.appendChild(item)
+          }
+        })
+      }
+
+
+
+    })
+  </script>
+</body>
+
+</html>
